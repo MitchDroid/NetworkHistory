@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_vertical|left">
+
+        <!-- A CardView that contains a TextView -->
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_view_pprograma"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            card_view:cardElevation="5dp"
+            card_view:cardBackgroundColor="#F9F9F8"
+            card_view:cardCornerRadius="4dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            card_view:contentPaddingTop="5dp"
+            card_view:contentPaddingBottom="5dp"
+            android:gravity="center_vertical|left">
+
+            <LinearLayout
+                android:id="@+id/panel_pprograma"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center_vertical|left">
+
+                <TextView
+                    android:id="@+id/txtpprogramatitle"
+                    style="@style/fragment_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="3dp"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/dark_green"
+                    android:text="@string/perfil_programa"/>
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_green" />
+
+                <TextView
+                    android:id="@+id/txtpprogramasubtitle"
+                    style="@style/fragment_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="3dp"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    android:text="@string/perfil_programa" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    />
+
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <!-- A CardView that contains a TextView -->
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_view_list_pprograma"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            card_view:cardCornerRadius="4dp"
+            card_view:cardElevation="5dp"
+            card_view:cardBackgroundColor="#F9F9F8"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            card_view:contentPaddingTop="5dp"
+            card_view:contentPaddingBottom="10dp"
+            android:gravity="center_vertical|left">
+
+            <LinearLayout
+                android:id="@+id/panel_pprograma_list"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                >
+
+                <TextView
+                    android:id="@+id/txtaptitudestitle"
+                    style="@style/fragment_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="3dp"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    android:text="APTITUDES" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    />
+
+                <TextView
+                    android:id="@+id/txtaptitudesitemone"
+                    style="@style/fragment_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="3dp"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    android:text="- APTITUDES" />
+
+                <TextView
+                    android:id="@+id/txtaptitudesitemtwo"
+                    style="@style/fragment_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="3dp"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    android:text="- APTITUDES" />
+                <TextView
+                    android:id="@+id/txtaptitudesitemthree"
+                    style="@style/fragment_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="3dp"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    android:text="- APTITUDES" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/txtconocimientostitle"
+                    style="@style/fragment_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="3dp"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    android:text="CONOCIMIENTOS" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    />
+
+                <TextView
+                    android:id="@+id/txtconocimientositemone"
+                    style="@style/fragment_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="3dp"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    android:text="- CONOCIMIENTOS " />
+
+                <TextView
+                    android:id="@+id/txtconocimientositemtwo"
+                    style="@style/fragment_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="3dp"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    android:text="- CONOCIMIENTOS" />
+                <TextView
+                    android:id="@+id/txtconocimientositemthree"
+                    style="@style/fragment_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="3dp"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    android:text="- CONOCIMIENTOS" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/txthabilidadestitle"
+                    style="@style/fragment_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="3dp"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    android:text="HABILIDADES" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    />
+
+
+                <TextView
+                    android:id="@+id/txthabilidadesitemone"
+                    style="@style/fragment_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="3dp"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    android:text="- HABILIDADES" />
+
+                <TextView
+                    android:id="@+id/txthabilidadesitemtwo"
+                    style="@style/fragment_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="3dp"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    android:text="- HABILIDADES" />
+                <TextView
+                    android:id="@+id/txthabilidadesitemthree"
+                    style="@style/fragment_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="3dp"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    android:text="- HABILIDADES" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    />
+
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+
+</LinearLayout>

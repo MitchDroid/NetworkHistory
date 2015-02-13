@@ -1,0 +1,18 @@
+<resources>
+
+    <style name="fragment_text">
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <!-- Button Overflow in Header -->
+    <style name="card.header_button_base.overflow" >
+        <item name="android:background">@drawable/card_menu_button_rounded_overflow</item>
+    </style>
+    <!-- Other Button in Header -->
+    <style name="card.header_button_base.other">
+        <item name="android:background">@drawable/cardd_menu_button_expand</item>
+    </style>
+
+
+</resources>

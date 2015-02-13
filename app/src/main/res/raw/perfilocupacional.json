@@ -1,0 +1,38 @@
+{
+	"ocupacional" : {
+		"title" : "Perfil Ocupacional",
+		"content" : "El Ingeniero de Sistemas de Los Libertadores se puede desempeñar como:",
+		"perfil" : [{
+				"id" : "1",
+				"content" : "Gerente de Tecnología, responsable por la provisión de servicios informáticos o tele-informáticos que sirven de base a la labor de una organización, tiene las competencias no solamente de mantener en funcionamiento la infraestructura requeridas, sino también de coordinar  un adecuado manteniemiento, innovación y renovación de equipos y sistemas computacionales de base."
+			}, {
+				"id" : "2",
+				"content" : "Consultor informático, experto capaz de asesorar a otras personas u organizaciones en la identificacion de oportunidades informáticas para la solución de problemas de su campo de especialidad, en la identificación, formulación, y valoración de alternativas en la orientación y entrenamiento personal, así como la puesta en marcha y seguimientos de las líneas de acción aplicables en la Ingeniería de Sistemas."
+			}, {
+				"id" : "3",
+				"content" : "Emprendedor, porque tiene iniciativa propia, es visionario de oportunidades y con capacidad para crear empreasas de sistemas y tecnologia."
+			}, {
+				"id" : "4",
+				"content" : "Jefe de proyectos de sisitemas , líder capaz de analizar, planear, organizar , implementar, dirigir y controlar actividades realizadas por un grupo de investigacion y desarrollo de sistemas, orientado a crear, diseñar, elaborar, mejorar ó analizar un problemas o sistema de informacion de una Organización."
+			}, {
+				"id" : "5",
+				"content" : "Director de sistema, encargado de todos los servicio informáticos de una compañia, asó como la infraestructura tenológica, técnica y talento humano que los hacen posibles. Es un administrados de servicios Informáticos, capaz de articularlos con los demas recursos de la Organización."
+			}, {
+				"id" : "6",
+				"content" : "Ingeniero responsable de aplicar normas de seguridad y desempeño de Sistemas y desarrollar procedimientos para  su operación y  mantenimiento."
+			}, {
+				"id" : "7",
+				"content" : "Analista, programdosr, jefe de desarrollo, Jefe se Sistemas, Constructor de Sistemas Informáticos: Capaz de analizar, diseñar, desarrollar, integrar, Innovar, operar y controlar Sistemas Informáticos relacionados con la Ingeniería de Software y Teleinformática."
+			}, {
+				"id" : "8",
+				"content" : "Interventor y Auditor de proyectos Informáticos."
+			}, {
+				"id" : "9",
+				"content" : "Soporte a Usuarios, con habilidad para capacitar, entrenar, dar soporte, analizar y resolver problemas operativos y técnicos a los Usuarios  de los Sistemas de Información de una Organización, utilizando las herramientos Tecnológicas adecuadas."
+			}, {
+				"id" : "10",
+				"content" : "Docencia e Investigación aplicada, líder en la explotación y generación de nuevas técnicas, métodos, metodologias y  teorias aplicadas en ingenieria de SIStemas."
+			},
+		]
+	}
+}

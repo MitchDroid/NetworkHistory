@@ -1,0 +1,44 @@
+{
+	"profesional" : {
+		"title" : "Perfil Profesional",
+		"content" : "El programa pretende formar un profesional en Ingeniería de Sistemas: ",
+		"perfil" : [{
+				"id" : "1",
+				"content" : "Con capacidad de cocebir, especificar, diseñar, desarrollar, validar montar, manterner integrar  y administrar sistemas de Software y Telemática."
+			}, {
+				"id" : "2",
+				"content" : "Con capacidad de tomar decisiones con responsabilidad y ética en las situaciones Que se le presentes en su ejercicio profesional."
+			}, {
+				"id" : "3",
+				"content" : "Con capacidad de reconocer la condición ciudadana de los demás actores sociales con actitud de la tolerancia, respeto por el otro y por las normas."
+			}, {
+				"id" : "4",
+				"content" : "Con capacidad de recurrir al conocimiento científico para proponer soluciones sustentadas en ese conocimiento através del pensamiento creativo, lógica y racional."
+			}, {
+				"id" : "5",
+				"content" : "Con capacidad para comprender y producir literatura técnica de la Ingeniería de Sistemas en lengua materna y en inglés."
+			}, {
+				"id" : "6",
+				"content" : "Con capacidad de argumentar de manera razonable e informada con base en el cuerpo de conocimientos que fundamentan la Ingeniería de Sistemas sobre la solución adoptada para resolver un problema."
+			}, {
+				"id" : "7",
+				"content" : "Con iniciativa para el desarrollo con responsabilidad de acciones creativas en el desempeñode la Ingeniería de Sistemas."
+			}, {
+				"id" : "8",
+				"content" : "Con actitud emprendedora para la creación de una empresa."
+			}, {
+				"id" : "9",
+				"content" : "Con capacidad para comunicarse adecuadamente en lengua materna y en inglés."
+			}, {
+				"id" : "10",
+				"content" : "Con capacidad y motivación para actualizar permanentemente sus conocimientos, cientificos y tecnológicos."
+			}, {
+				"id" : "11",
+				"content" : "Con capacidad de realizar trabajo inter y trans disciplizarío en forma individual y como integrante de un equipo."
+			}, {
+				"id" : "12",
+				"content" : "Con capacidad de usar las tecnologías de la información y comunicación para acceder al conocimiento actualizado necesario para dar solución a problemas en el ámbito de la profesión."
+			}
+		]
+	}
+}

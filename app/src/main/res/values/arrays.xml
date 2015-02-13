@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="tutorial_images">
+        <item>@drawable/ic_tour_1</item>
+        <item>@drawable/ic_tour_2</item>
+        <item>@drawable/ic_tour_docentes</item>
+    </array>
+</resources>

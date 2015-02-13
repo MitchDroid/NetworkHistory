@@ -1,0 +1,9 @@
+{
+	"maincontent" : [
+    		{
+    			"id" : "Telefono",
+    			"content" : "Estaba constituido por un emisor, un receptor y un único cable de conexión. Tanto el emisor como el receptor estaban formados por un diafragma metálico flexible y un imán con forma de herradura en el interior de la bobina. Las ondas del sonido que chocaban sobre el diafragma lo hacían vibrar en el campo magnético del imán. Dicha vibración inducía una corriente en la bobina, que variaba según las vibraciones del diafragma. Dicha corriente se transmitía por el cable hacia el receptor del otro tel"
+    		},
+
+    	]
+}

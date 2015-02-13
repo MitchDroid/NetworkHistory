@@ -1,0 +1,16 @@
+{
+	"egreso" : {
+		"title" : "Perfil de Egreso.",
+		"content_uno" : "El Ingeniero 	de Sistemas de los Libertadores es un profesional con sólida fundamentación ética, cientifica y humanística,emprendedor, con compromiso social, acredita conocimiento científico, tecnolólogicos y técnicos en el campo específico de los sistemas. Que le permiten contribuir al progreso del país, al bienestar de la comunidad y a su propia realización personal.",
+		"content_dos" : "Es capaz de resolver problemas de ingeniería a través del análisis, la planeación, diseño, evaluación, desarrollo, integración, y gestión de sistemas de información y soluciones telemáticas cuidando el impacto social, económico y tecnólogico puede realizar las siguientes funciones:",
+		"funciones" : [{
+				"id" : "1",
+				"content" : "Desarrollar Software de Calidad"
+			}, {
+				"id" : "2",
+				"content" : "Desarrollar soluciones telemáticas"
+			}
+		]
+
+	}
+}
