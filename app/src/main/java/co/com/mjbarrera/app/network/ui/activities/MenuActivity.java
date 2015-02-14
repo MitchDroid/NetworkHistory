@@ -20,14 +20,14 @@ import java.io.IOException;
 
 import co.com.mjbarrera.app.network.R;
 import co.com.mjbarrera.app.network.application.PepfullApplication;
+import co.com.mjbarrera.app.network.ui.fragments.FirstWirelesFragment;
 import co.com.mjbarrera.app.network.ui.fragments.HomeFragment;
+import co.com.mjbarrera.app.network.ui.fragments.InhalambricaFragment;
+import co.com.mjbarrera.app.network.ui.fragments.InternetFragment;
+import co.com.mjbarrera.app.network.ui.fragments.ModemFragment;
 import co.com.mjbarrera.app.network.ui.fragments.RadioFragment;
 import co.com.mjbarrera.app.network.ui.fragments.TelegraphFragment;
 import co.com.mjbarrera.app.network.ui.fragments.TelephoneFragment;
-import co.com.mjbarrera.app.network.ui.fragments.PEgresoFragment;
-import co.com.mjbarrera.app.network.ui.fragments.POcupacionalFragment;
-import co.com.mjbarrera.app.network.ui.fragments.PProfesionalFragment;
-import co.com.mjbarrera.app.network.ui.fragments.PProgramaFragment;
 import co.com.mjbarrera.app.network.utils.IntentHelper;
 
 public class MenuActivity extends ActionBarActivity implements
@@ -47,12 +47,11 @@ public class MenuActivity extends ActionBarActivity implements
     private ResideMenuItem itemTelegraph;
     private ResideMenuItem itemTelehpone;
     private ResideMenuItem itemRadio;
-    private ResideMenuItem itemPPrograma;
-    private ResideMenuItem itemPProfesional;
-    private ResideMenuItem itemPOcupacional;
+    private ResideMenuItem itemWireless;
+    private ResideMenuItem itemModem;
+    private ResideMenuItem itemInternet;
+    private ResideMenuItem itemFWireless;
 
-    private ResideMenuItem itemPEgreso;
-    private ResideMenuItem itemDocentes;
 
     private android.support.v7.widget.ShareActionProvider mShareActionProvider;
 
@@ -107,41 +106,41 @@ public class MenuActivity extends ActionBarActivity implements
         itemTelehpone = new ResideMenuItem(this,
                 R.drawable.ic_material_obj_especifico_white_36dp, "16 Enero,1876");
         itemRadio = new ResideMenuItem(this,
-                R.drawable.ic_material_obj_especifico_white_36dp, "17th Jan,1888");
-        itemPPrograma = new ResideMenuItem(this,
-                R.drawable.ic_material_obj_especifico_white_36dp, "Perfil Programa");
-        itemPProfesional = new ResideMenuItem(this,
-                R.drawable.ic_material_obj_especifico_white_36dp, "Perfil Profesional");
-        itemPOcupacional = new ResideMenuItem(this,
-                R.drawable.ic_material_obj_especifico_white_36dp, "Perfil Ocupacional");
-        itemPEgreso = new ResideMenuItem(this,
-                R.drawable.ic_material_obj_especifico_white_36dp, "Perfil Egreso");
-        itemDocentes = new ResideMenuItem(this,
-                R.drawable.ic_material_obj_especifico_white_36dp, "Docentes");
+                R.drawable.ic_material_obj_especifico_white_36dp, "17th Enero,1888");
+        itemWireless = new ResideMenuItem(this,
+                R.drawable.ic_material_obj_especifico_white_36dp, "17th Enero,1889");
+        itemModem = new ResideMenuItem(this,
+                R.drawable.ic_material_obj_especifico_white_36dp, "16th Enero,1962");
+        itemInternet = new ResideMenuItem(this,
+                R.drawable.ic_material_obj_especifico_white_36dp, "16th Enero,1969");
+        itemFWireless = new ResideMenuItem(this,
+                R.drawable.ic_material_obj_especifico_white_36dp, "17th Jan,1971");
+
 
         itemHome.setOnClickListener(this);
         itemTelegraph.setOnClickListener(this);
         itemTelehpone.setOnClickListener(this);
         itemRadio.setOnClickListener(this);
-        itemPPrograma.setOnClickListener(this);
-        itemPProfesional.setOnClickListener(this);
-        itemPOcupacional.setOnClickListener(this);
-        itemPEgreso.setOnClickListener(this);
-        itemDocentes.setOnClickListener(this);
+        itemWireless.setOnClickListener(this);
+        itemModem.setOnClickListener(this);
+        itemInternet.setOnClickListener(this);
+        itemFWireless.setOnClickListener(this);
+
 
         resideMenu.addMenuItem(itemHome, ResideMenu.DIRECTION_LEFT);
         resideMenu.addMenuItem(itemTelegraph, ResideMenu.DIRECTION_LEFT);
         resideMenu.addMenuItem(itemTelehpone, ResideMenu.DIRECTION_LEFT);
         resideMenu.addMenuItem(itemRadio, ResideMenu.DIRECTION_LEFT);
-        resideMenu.addMenuItem(itemPPrograma, ResideMenu.DIRECTION_LEFT);
-        resideMenu.addMenuItem(itemPProfesional, ResideMenu.DIRECTION_LEFT);
-        resideMenu.addMenuItem(itemPOcupacional, ResideMenu.DIRECTION_LEFT);
-        resideMenu.addMenuItem(itemPEgreso, ResideMenu.DIRECTION_LEFT);
-        resideMenu.addMenuItem(itemDocentes, ResideMenu.DIRECTION_LEFT);
+        resideMenu.addMenuItem(itemWireless, ResideMenu.DIRECTION_LEFT);
+
+        resideMenu.addMenuItem(itemModem, ResideMenu.DIRECTION_LEFT);
+        resideMenu.addMenuItem(itemInternet, ResideMenu.DIRECTION_LEFT);
+        resideMenu.addMenuItem(itemFWireless, ResideMenu.DIRECTION_LEFT);
 
         // You can disable a direction by setting ->
         resideMenu.setSwipeDirectionDisable(ResideMenu.DIRECTION_RIGHT);
     }
+
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
@@ -153,29 +152,20 @@ public class MenuActivity extends ActionBarActivity implements
 
         if (view == itemHome) {
             changeFragment(new HomeFragment());
-        } else if (view == itemHome) {
-            changeFragment(new TelegraphFragment());
         } else if (view == itemTelegraph) {
-            changeFragment(new TelephoneFragment());
+            changeFragment(new TelegraphFragment());
         } else if (view == itemTelehpone) {
-            changeFragment(new RadioFragment());
+            changeFragment(new TelephoneFragment());
         } else if (view == itemRadio) {
-            changeFragment(new PProgramaFragment());
-        } else if (view == itemPProfesional) {
-            changeFragment(new PProfesionalFragment());
-        } else if (view == itemPOcupacional) {
-            changeFragment(new POcupacionalFragment());
-        } else if (view == itemPEgreso) {
-            changeFragment(new PEgresoFragment());
-        }else if(view == itemDocentes){
-            try {
-                IntentHelper.goToFile(PATH + mOutputFile);
-            }catch (IOException io){
-                io.printStackTrace();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
+            changeFragment(new RadioFragment());
+        }else if (view == itemWireless) {
+            changeFragment(new InhalambricaFragment());
+        }else if (view == itemModem) {
+            changeFragment(new ModemFragment());
+        } else if (view == itemInternet) {
+            changeFragment(new InternetFragment());
+        } else if (view == itemFWireless) {
+            changeFragment(new FirstWirelesFragment());
         }
         resideMenu.closeMenu();
     }

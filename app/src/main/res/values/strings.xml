@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Network History</string>
+    <string name="app_name">Redes</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="action_about">Acerca de</string>
+    <string name="action_about">Bibliografía</string>
     <string name="login">Login to noMada</string>
     <string name="login_button">Login</string>
     <string name="sign_button">Sign in</string>
@@ -27,17 +27,17 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_example">Example action</string>
     <string name="title_activity_menu">Menu Principal</string>
-    <string name="home_title">PEP</string>
+    <string name="home_title">Historia de las Redes</string>
     <string name="telegraph_tittle">Telégrafo.</string>
     <string name="telegraph_subtitle">Telégrafo como primer sistema de comunicación eléctrico</string>
     <string name="vision_tittle">Vision.</string>
     <string name="perfil_egreso_title">Perfil Egreso.</string>
     <string name="telephone_title">Teléfono.</string>
     <string name="radio_title">Ondas de Radio.</string>
-    <string name="perfil_profesional_title">Perfil Profesional.</string>
+    <string name="modem_title">Modem.</string>
     <string name="perfil_ocupacional">Pergil Ocupacional.</string>
-    <string name="perfil_programa">Perfil del Programa.</string>
-    <string name="home_pep_title_description">PROYECTO EDUCATIVO DEL PROGRAMA</string>
+    <string name="first_wireless">Guillermo Marconi.</string>
+    <string name="home_pep_title_description">LINEA DE TIEMPO</string>
     <string name="home_pep_description">PROGRAMA DE INGENIERÍA DE SISTEMAS - FACULTAD DE INGENIERÍA</string>
     <string name="acerca_de">Institucion Universitaria Los Libertadores</string>
     <string name="acerca_de_uno">Todos los derechos reservados - 2014</string>
@@ -46,9 +46,9 @@
     <string name="share_with">Compatir con..</string>
 
     <string-array name="contents_array">
-        <item>PEP</item>
-        <item>FULL</item>
-        <item>Docentes</item>
+        <item>FUNDAMENTOS DE RED</item>
+        <item>FUNDAMENTOS DE RED</item>
+        <item>FUNDAMENTOS DE RED</item>
     </string-array>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>

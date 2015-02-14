@@ -1,12 +1,11 @@
-package co.com.mjbarrera.app.network.domain.PerfilPrograma;
+package co.com.mjbarrera.app.network.domain.Internet;
 
 /**
- * Created by Personal on 26/10/2014.
+ * Created by miller.barrera on 13/02/2015.
  */
-public class PProgramaHabilidades {
+public class Internet {
     private String id;
     private String content;
-
 
     public String getId() {
         return id;

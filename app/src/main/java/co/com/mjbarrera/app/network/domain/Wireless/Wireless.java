@@ -1,12 +1,11 @@
-package co.com.mjbarrera.app.network.domain.PerfilPrograma;
+package co.com.mjbarrera.app.network.domain.Wireless;
 
 /**
- * Created by Personal on 26/10/2014.
+ * Created by miller.barrera on 13/02/2015.
  */
-public class PProgramaConocimientos {
+public class Wireless {
     private String id;
     private String content;
-
 
     public String getId() {
         return id;

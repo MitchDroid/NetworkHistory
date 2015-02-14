@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import co.com.mjbarrera.app.network.R;
 import co.com.mjbarrera.app.network.ui.fragments.LoginFragment;
@@ -20,12 +21,22 @@ public class AcercadeFragment extends android.support.v4.app.Fragment {
     private Activity mActivity;
     private ImageButton btnFB;
     private ImageButton btnTW;
+    private TextView mLink;
+    private static String URL = "http://www.timetoast.com/timelines/linea-de-tiempo-de-las-redes-informaticas";
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_acercade, container, false);
 
+        mLink = (TextView) rootView.findViewById(R.id.clickableTextView);
+        mLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent link = new Intent(Intent.ACTION_VIEW, Uri.parse(URL));
+                startActivity(link);
+            }
+        });
         btnTW = (ImageButton) rootView.findViewById(R.id.btnTW);
         btnTW.setOnClickListener(new View.OnClickListener() {
             @Override

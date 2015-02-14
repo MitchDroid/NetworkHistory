@@ -7,7 +7,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="match_parent"
         android:layout_above="@+id/ignored_view"
         android:layout_alignParentTop="true"
         android:gravity="center"
@@ -26,7 +26,7 @@
             android:textSize="15dp"
             android:textStyle="bold"
             android:textColor="@color/dark_green"
-            android:text="@string/acerca_de" />
+            android:text="Tomado de:" />
 
 
         <ImageView
@@ -46,13 +46,13 @@
             android:visibility="gone" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/clickableTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:clickable="false"
+            android:gravity="center_horizontal"
+            android:clickable="true"
             android:padding="5dp"
-            android:text="@string/acerca_de_uno"
+            android:text="http://www.timetoast.com/timelines/linea-de-tiempo-de-las-redes-informaticas"
             android:textColor="@color/dark_green"
             android:textSize="10sp" />
 

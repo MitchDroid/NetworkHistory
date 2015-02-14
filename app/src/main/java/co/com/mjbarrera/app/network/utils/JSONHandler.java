@@ -12,19 +12,13 @@ import java.util.List;
 
 import co.com.mjbarrera.app.network.R;
 import co.com.mjbarrera.app.network.application.PepfullApplication;
-import co.com.mjbarrera.app.network.domain.PerfilEgreso.PEgreso;
-import co.com.mjbarrera.app.network.domain.PerfilEgreso.PEgresoFunciones;
-import co.com.mjbarrera.app.network.domain.PerfilOcupacional.POcupacional;
-import co.com.mjbarrera.app.network.domain.PerfilOcupacional.POcupacionalPerfil;
-import co.com.mjbarrera.app.network.domain.PerfilProfesional.PProfesional;
-import co.com.mjbarrera.app.network.domain.PerfilProfesional.PProfesionalPerfil;
-import co.com.mjbarrera.app.network.domain.PerfilPrograma.PPrograma;
-import co.com.mjbarrera.app.network.domain.PerfilPrograma.PProgramaConocimientos;
-import co.com.mjbarrera.app.network.domain.PerfilPrograma.PProgramaHabilidades;
-import co.com.mjbarrera.app.network.domain.PerfilPrograma.PProgramaPerfil;
+import co.com.mjbarrera.app.network.domain.Internet.Internet;
+import co.com.mjbarrera.app.network.domain.Modem.Modem;
+import co.com.mjbarrera.app.network.domain.PerfilEgreso.FirstWireless;
+import co.com.mjbarrera.app.network.domain.Wireless.Wireless;
 import co.com.mjbarrera.app.network.domain.radio.Radio;
-import co.com.mjbarrera.app.network.domain.telephone.Telephone;
 import co.com.mjbarrera.app.network.domain.telegraph.Telegraph;
+import co.com.mjbarrera.app.network.domain.telephone.Telephone;
 
 /**
  * Created by Personal on 25/10/2014.
@@ -34,29 +28,15 @@ public class JSONHandler {
     private static PepfullApplication pepApplication = PepfullApplication
             .getInstance();
 
-    private static ArrayList<Telegraph> listTelegraph;
-    /*Telefono*/
-
+    private static List<Telegraph> listTelegraph;
     private static List<Telephone> listItemsTelehpone;
     private static List<Radio> listItemsRadio;
+    private static List<Wireless> listWireless;
+    private static List<Modem> listModem;
+    private static List<Internet> listInternet;
+    private static List<FirstWireless> listFirstWireless;
 
-    /*Perfil del programa*/
-    private static PPrograma pprograma;
-    private static List<PProgramaPerfil> listPerfil;
-    private static List<PProgramaConocimientos> listConocimientos;
-    private static List<PProgramaHabilidades> listHabilidades;
 
-    /*Perfil Ocupacional*/
-    private static POcupacional pocupacional;
-    private static List<POcupacionalPerfil> listPerfilOcupacional;
-
-    /*Perfil profesional*/
-    private static PProfesional pprofesional;
-    private static List<PProfesionalPerfil> listProPerfil;
-
-    /*Perfil Egreso*/
-    private static PEgreso pegreso;
-    private static List<PEgresoFunciones> listEgreso;
 
 
     /*return Telegraph from JSON element*/
@@ -186,212 +166,161 @@ public class JSONHandler {
 
     }
 
-    /*return PerfilPrograma from JSON element*/
-    public static void getPProgramaFromJSON() {
-        int rawFile = R.raw.perfilprograma;
+    /*return Wireless from JSON element*/
+    public static void getWirelessFromJSON() {
+        int rawFile = R.raw.wireless;
 
-        pprograma = new PPrograma();
-        listPerfil = new ArrayList<PProgramaPerfil>();
-        listConocimientos = new ArrayList<PProgramaConocimientos>();
-        listHabilidades = new ArrayList<PProgramaHabilidades>();
+        listWireless = new ArrayList<>();
 
+        // Try to parse JSON
         try {
             //read JSON from resources
             String sGetDataFromJSONFiles = readJSONFile(rawFile);
-
+            // Creating JSONObject from String
             JSONObject jsonObjMain = new JSONObject(sGetDataFromJSONFiles);
 
-            JSONObject object = jsonObjMain.getJSONObject("programa");
+            // Creating JSONArray from JSONObject
+            JSONArray jsonArray = jsonObjMain.getJSONArray("maincontent");
 
-            String title = object.getString("title");
-            String content = object.getString("content");
+            for (int i = 0; i < jsonArray.length(); i++) {
+                Wireless data = new Wireless();
+                // Creating JSONObject from JSONArray
+                JSONObject jsonObj = jsonArray.getJSONObject(i);
 
-            pprograma.setTitle(title);
-            pprograma.setContent(content);
+                // Getting data from individual JSONObject
+                String id = jsonObj.getString("id");
+                String content = jsonObj.getString("content");
 
-            JSONArray jsonArrayPerfil = object.getJSONArray("perfil");
-            for (int i = 0; i < jsonArrayPerfil.length(); i++) {
-                JSONObject objperfil = jsonArrayPerfil.getJSONObject(i);
-                PProgramaPerfil pperfil = new PProgramaPerfil();
+                // Append result to TextView
+                data.setId(id);
+                data.setContent(content);
 
-                String _id = objperfil.getString("id");
-                String _content = objperfil.getString("content");
-
-                pperfil.setId(_id);
-                pperfil.setContent(_content);
-
-                listPerfil.add(pperfil);
-                pprograma.setListPefil(listPerfil);
+                listWireless.add(data);
             }
 
-            JSONArray jsonArrayConocimiento = object.getJSONArray("conocimientos");
-            for (int i = 0; i < jsonArrayConocimiento.length(); i++) {
-                JSONObject objConocimiento = jsonArrayConocimiento.getJSONObject(i);
-                PProgramaConocimientos ppconocimiento = new PProgramaConocimientos();
-
-                String _id = objConocimiento.getString("id");
-                String _content = objConocimiento.getString("content");
-
-                ppconocimiento.setId(_id);
-                ppconocimiento.setContent(_content);
-
-                listConocimientos.add(ppconocimiento);
-                pprograma.setListConocimientos(listConocimientos);
-            }
-
-            JSONArray jsonArrayHabilidades = object.getJSONArray("habilidades");
-            for (int i = 0; i < jsonArrayHabilidades.length(); i++) {
-                JSONObject objHabilidades = jsonArrayHabilidades.getJSONObject(i);
-                PProgramaHabilidades pphabilidades = new PProgramaHabilidades();
-
-                String _id = objHabilidades.getString("id");
-                String _content = objHabilidades.getString("content");
-
-                pphabilidades.setId(_id);
-                pphabilidades.setContent(_content);
-
-                listHabilidades.add(pphabilidades);
-                pprograma.setListHabilidades(listHabilidades);
-            }
-
-        } catch (JSONException js) {
-            js.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
-
-        PepfullApplication.setpPrograma(pprograma);
+        PepfullApplication.setListWireless(listWireless);
     }
 
-    /*return PerfilProfesional from JSON element*/
-    public static void getPProfesionalFromJSON() {
-        int rawFile = R.raw.perfilprofesional;
-        pprofesional = new PProfesional();
-        listProPerfil = new ArrayList<PProfesionalPerfil>();
+    /*return Modem from JSON element*/
+    public static void getModemFromJSON() {
+        int rawFile = R.raw.modem;
 
+        listModem = new ArrayList<>();
 
+// Try to parse JSON
         try {
-
             //read JSON from resources
             String sGetDataFromJSONFiles = readJSONFile(rawFile);
+            // Creating JSONObject from String
+            JSONObject jsonObjMain = new JSONObject(sGetDataFromJSONFiles);
 
-            JSONObject object = new JSONObject(sGetDataFromJSONFiles);
-            JSONObject main = object.getJSONObject("profesional");
+            // Creating JSONArray from JSONObject
+            JSONArray jsonArray = jsonObjMain.getJSONArray("maincontent");
 
-            String _title = main.getString("title");
-            String _content = main.getString("content");
+            for (int i = 0; i < jsonArray.length(); i++) {
+                Modem data = new Modem();
+                // Creating JSONObject from JSONArray
+                JSONObject jsonObj = jsonArray.getJSONObject(i);
 
-            pprofesional.setTitle(_title);
-            pprofesional.setContent(_content);
+                // Getting data from individual JSONObject
+                String id = jsonObj.getString("id");
+                String content = jsonObj.getString("content");
 
-            JSONArray jsonArrayPProfesional = main.getJSONArray("perfil");
+                // Append result to TextView
+                data.setId(id);
+                data.setContent(content);
 
-            for (int i = 0; i < jsonArrayPProfesional.length(); i++) {
-                JSONObject _object = jsonArrayPProfesional.getJSONObject(i);
-                PProfesionalPerfil perfil = new PProfesionalPerfil();
-
-                String _id = _object.getString("id");
-                String _contentt = _object.getString("content");
-
-                perfil.setId(_id);
-                perfil.setContent(_contentt);
-
-                listProPerfil.add(perfil);
-                pprofesional.setListPerfil(listProPerfil);
-
+                listModem.add(data);
             }
-        } catch (JSONException js) {
-            js.printStackTrace();
+
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
 
-
-        PepfullApplication.setpProfesional(pprofesional);
+        PepfullApplication.setListModem(listModem);
     }
 
 
-    /*return PerfilOcupacional from JSON element*/
-    public static void getPerfilOcupacionalDaraFromJSON() {
-        int rawFile = R.raw.perfilocupacional;
-        pocupacional = new POcupacional();
-        listPerfilOcupacional = new ArrayList<POcupacionalPerfil>();
+    /*return Internet from JSON element*/
+    public static void getInternetFromJSON() {
+        int rawFile = R.raw.internet;
 
-        String sGetDataFromJSONFiles;
+        listInternet = new ArrayList<>();
 
+
+// Try to parse JSON
         try {
             //read JSON from resources
-            sGetDataFromJSONFiles = loadFromFile(rawFile);
+            String sGetDataFromJSONFiles = readJSONFile(rawFile);
+            // Creating JSONObject from String
+            JSONObject jsonObjMain = new JSONObject(sGetDataFromJSONFiles);
 
-            JSONObject object = new JSONObject(sGetDataFromJSONFiles);
-            JSONObject content = object.getJSONObject("ocupacional");
+            // Creating JSONArray from JSONObject
+            JSONArray jsonArray = jsonObjMain.getJSONArray("maincontent");
 
-            String _title = content.getString("title");
-            String _content = content.getString("content");
+            for (int i = 0; i < jsonArray.length(); i++) {
+                Internet data = new Internet();
+                // Creating JSONObject from JSONArray
+                JSONObject jsonObj = jsonArray.getJSONObject(i);
 
-            pocupacional.setTitle(_title);
-            pocupacional.setContent(_content);
+                // Getting data from individual JSONObject
+                String id = jsonObj.getString("id");
+                String content = jsonObj.getString("content");
 
-            JSONArray jsonPerfiOcupacionalArray = content.getJSONArray("perfil");
+                // Append result to TextView
+                data.setId(id);
+                data.setContent(content);
 
-            for (int i = 0; i < jsonPerfiOcupacionalArray.length(); i++) {
-                JSONObject contentArray = jsonPerfiOcupacionalArray.getJSONObject(i);
-                POcupacionalPerfil perfil = new POcupacionalPerfil();
-                perfil.setId(contentArray.getString("id"));
-                perfil.setContent(contentArray.getString("content"));
-
-                listPerfilOcupacional.add(perfil);
-                pocupacional.setListPerfil(listPerfilOcupacional);
+                listInternet.add(data);
             }
 
-
-        } catch (JSONException js) {
-            js.printStackTrace();
-        } catch (IOException io) {
-            io.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
 
-        PepfullApplication.setpOcupacional(pocupacional);
+        PepfullApplication.setListInternet(listInternet);
     }
 
-    /*return PerfilEgreso from JSON element*/
-    public static void getPerfilEgresoDataFromJSON() {
-        int rawFile = R.raw.perfilegreso;
-        pegreso = new PEgreso();
-        listEgreso = new ArrayList<PEgresoFunciones>();
+    /*return FirstWireless from JSON element*/
+    public static void getFirstWirelessFromJSON() {
+        int rawFile = R.raw.fwireless;
 
-        String sGetDataFromJSONFiles;
+        listFirstWireless = new ArrayList<>();
 
+        // Try to parse JSON
         try {
             //read JSON from resources
-            sGetDataFromJSONFiles = loadFromFile(rawFile);
+            String sGetDataFromJSONFiles = readJSONFile(rawFile);
+            // Creating JSONObject from String
+            JSONObject jsonObjMain = new JSONObject(sGetDataFromJSONFiles);
 
-            JSONObject object = new JSONObject(sGetDataFromJSONFiles);
-            JSONObject content = object.getJSONObject("egreso");
+            // Creating JSONArray from JSONObject
+            JSONArray jsonArray = jsonObjMain.getJSONArray("maincontent");
 
-            String _title = content.getString("title");
-            String content_uno = content.getString("content_uno");
-            String content_dos = content.getString("content_dos");
+            for (int i = 0; i < jsonArray.length(); i++) {
+                FirstWireless data = new FirstWireless();
+                // Creating JSONObject from JSONArray
+                JSONObject jsonObj = jsonArray.getJSONObject(i);
 
-            pegreso.setTitle(_title);
-            pegreso.setContent_uno(content_uno);
-            pegreso.setContent_dos(content_dos);
+                // Getting data from individual JSONObject
+                String id = jsonObj.getString("id");
+                String content = jsonObj.getString("content");
 
-            JSONArray jsonPerfiOcupacionalArray = content.getJSONArray("funciones");
+                // Append result to TextView
+                data.setId(id);
+                data.setContent(content);
 
-            for (int i = 0; i < jsonPerfiOcupacionalArray.length(); i++) {
-                JSONObject contentArray = jsonPerfiOcupacionalArray.getJSONObject(i);
-                PEgresoFunciones funciones = new PEgresoFunciones();
-                funciones.setId(contentArray.getString("id"));
-                funciones.setContent(contentArray.getString("content"));
-
-                listEgreso.add(funciones);
-                pegreso.setListFunciones(listEgreso);
+                listFirstWireless.add(data);
             }
-            pepApplication.setPerfilEgresoResponse(pegreso);
 
-        } catch (JSONException js) {
-            js.printStackTrace();
-        } catch (IOException io) {
-            io.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
 
+        PepfullApplication.setListFirstWireless(listFirstWireless);
 
     }
 

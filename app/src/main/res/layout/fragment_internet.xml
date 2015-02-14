@@ -40,35 +40,31 @@
                 android:gravity="center_vertical|left">
 
                 <TextView
-                    android:id="@+id/txtpocupacionalTitle"
                     style="@style/fragment_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:elevation="3dp"
                     android:textSize="30dp"
                     android:textStyle="bold"
+                    android:gravity="center_horizontal"
                     android:textColor="@color/dark_green"
-                    android:text="@string/perfil_ocupacional" />
+                    android:text="Internet" />
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="@color/light_green" />
 
-                <TextView
-                    android:id="@+id/txtpocupacionalsubtitle"
-                    style="@style/fragment_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:elevation="3dp"
-                    android:textSize="12dp"
-                    android:textStyle="bold"
-                    android:text="@string/perfil_profesional_title" />
-
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="10dp"
                     />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:src="@drawable/img_internet" />
 
 
             </LinearLayout>
@@ -102,12 +98,13 @@
                 android:layout_marginRight="8dp"
                 >
 
-                <ListView
-                    android:id="@+id/listview"
+                <TextView
+                    android:id="@+id/txtContent"
+                    style="@style/fragment_text"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:dividerHeight="1px"
-                    android:divider="@android:color/darker_gray"/>
+                    android:layout_height="wrap_content"
+                    android:elevation="3dp"
+                    android:text="Internet" />
             </LinearLayout>
         </android.support.v7.widget.CardView>
 

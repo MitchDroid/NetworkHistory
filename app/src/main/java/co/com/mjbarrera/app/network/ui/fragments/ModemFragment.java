@@ -15,27 +15,23 @@ import java.util.List;
 
 import co.com.mjbarrera.app.network.R;
 import co.com.mjbarrera.app.network.application.PepfullApplication;
-import co.com.mjbarrera.app.network.domain.PerfilProfesional.PProfesional;
-import co.com.mjbarrera.app.network.domain.PerfilProfesional.PProfesionalPerfil;
-import co.com.mjbarrera.app.network.ui.adapters.CustomListAdapter;
+import co.com.mjbarrera.app.network.domain.Modem.Modem;
 
 /**
  * Created by Personal on 26/10/2014.
  */
-public class PProfesionalFragment extends Fragment {
+public class ModemFragment extends Fragment {
 
     private Activity mActivity;
-    private TextView txtSubTitle;
+    private TextView txtContent;
     private ListView listView;
     private String[] values;
-    private List<PProfesionalPerfil> listItems;
+    private List<Modem> listItems;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_perfil_profesional, container, false);
-
-        listView = (ListView) rootView.findViewById(R.id.listview);
-        txtSubTitle = (TextView) rootView.findViewById(R.id.txtpprofesionalsubtitle);
+        View rootView = inflater.inflate(R.layout.fragment_modem, container, false);
+        txtContent = (TextView) rootView.findViewById(R.id.txtContent);
 
         initView();
         return rootView;
@@ -45,19 +41,13 @@ public class PProfesionalFragment extends Fragment {
 
     public void initView(){
 
-        PProfesional profesionalResponse = PepfullApplication.getpProfesional();
-        txtSubTitle.setText(profesionalResponse.getContent());
+        listItems = PepfullApplication.getListModem();
 
-        listItems = profesionalResponse.getListPerfil();
-        values = new String[listItems.size()];
         for (int i = 0; i < listItems.size(); i++) {
-            values[i] = listItems.get(i).getContent();
+            if (listItems.get(i).getId().equalsIgnoreCase("Modem")) {
+                txtContent.setText(listItems.get(i).getContent());
+            }
         }
-
-        CustomListAdapter adapter = new CustomListAdapter(mActivity.getBaseContext(), values);
-        listView.setAdapter(adapter);
-
-
     }
 
     @Override

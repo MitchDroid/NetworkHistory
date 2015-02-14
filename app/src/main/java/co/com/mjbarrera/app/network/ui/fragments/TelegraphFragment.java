@@ -23,8 +23,7 @@ import co.com.mjbarrera.app.network.domain.telegraph.Telegraph;
 public class TelegraphFragment extends Fragment {
 
     private Activity mActivity;
-    private TextView txtMisonTitle;
-    private TextView txtMisionContent;
+    private TextView txtContent;
     private String myjsonstring;
     private List<Telegraph> list;
 
@@ -44,8 +43,8 @@ public class TelegraphFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        txtMisonTitle = (TextView) view.findViewById(R.id.txtTitle);
-        txtMisionContent = (TextView) view.findViewById(R.id.txtContent);
+
+        txtContent = (TextView) view.findViewById(R.id.txtContent);
 
 
         initViews();
@@ -57,8 +56,8 @@ public class TelegraphFragment extends Fragment {
 
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).getId().equalsIgnoreCase("Telegrafo")) {
-                txtMisonTitle.setText(list.get(i).getId());
-                txtMisionContent.setText(list.get(i).getContent());
+
+                txtContent.setText(list.get(i).getContent());
             }
         }
 

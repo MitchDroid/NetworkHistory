@@ -1,0 +1,9 @@
+{
+	"maincontent" : [
+		{
+			"id" : "FWireless",
+			"content" : "Un grupo de investigadores bajo la dirección de Norman Abramson, en la Universidad de Hawaii, crearon el primer sistema de conmutación de paquetes mediante una red de comunicación por radio, dicha red se llamo ALOHA. Ésta es la primera red de área local inalámbrica (WLAN), estaba formada por 7 computadoras situadas en distintas islas que se podían comunicar con un ordenador central al cual pedían que realizara cálculos."
+		},
+
+	]
+}

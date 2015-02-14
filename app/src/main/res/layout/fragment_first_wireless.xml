@@ -40,15 +40,15 @@
                 android:gravity="center_vertical|left">
 
                 <TextView
-                    android:id="@+id/txtPerfilEgresoTitle"
                     style="@style/fragment_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:elevation="3dp"
-                    android:textSize="30dp"
+                    android:textSize="25dp"
                     android:textStyle="bold"
+                    android:gravity="center_horizontal"
                     android:textColor="@color/dark_green"
-                    android:text="@string/perfil_egreso_title" />
+                    android:text="Primera red inalámbrica" />
 
                 <ImageView
                     android:layout_width="match_parent"
@@ -59,6 +59,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="10dp"
                     />
+
+                <ImageView
+                    android:layout_width="150dip"
+                    android:layout_height="150dip"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:src="@drawable/img_first_wireless" />
 
             </LinearLayout>
 
@@ -93,50 +99,13 @@
                 android:gravity="center_vertical|left">
 
                 <TextView
-                    android:id="@+id/txtPerfilEgresonContentUno"
+                    android:id="@+id/txtContent"
                     style="@style/fragment_text"
                     android:elevation="3dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/perfil_egreso_title" />
+                    android:text="Inalambrica" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    />
-
-                <TextView
-                    android:id="@+id/txtPerfilEgresonContentDos"
-                    style="@style/fragment_text"
-                    android:elevation="3dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/perfil_egreso_title" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    />
-
-                <TextView
-                    android:id="@+id/txtPerfilEgresoItemUno"
-                    style="@style/fragment_text"
-                    android:elevation="3dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="item uno" />
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    />
-
-                <TextView
-                    android:id="@+id/txtPerfilEgresoItemDos"
-                    style="@style/fragment_text"
-                    android:elevation="3dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="item dos" />
 
             </LinearLayout>
 
